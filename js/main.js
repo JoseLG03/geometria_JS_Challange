@@ -1,26 +1,47 @@
 'use strict';
-let sectionCuadrado = document.getElementById(sectionCuadrado);
 
 function calcularPerimetroCuadrado(){
     const valuePerimetro = document.getElementById("InputCuadrado");
     let perimetroCuadrado = valuePerimetro.value * 4;
 
     const parrafo = document.createElement("p");
-	let contenido = document.createTextNode(`El valor del perímetro de tu cuadrado es de ${perimetroCuadrado} cm.`);
-    parrafo.appendChild(contenido);
+	parrafo.textContent =`El valor del Perímetro de tu cuadrado es de ${perimetroCuadrado} cm.`;
+    let sectionCuadrado = document.getElementById("sectionCuadrado");
     sectionCuadrado.appendChild(parrafo);
 };
 
 function calcularAreaCuadrado(){
     const valueArea = document.getElementById("InputCuadrado");
     let areaCuadrado = valueArea.value * valueArea.value;
-    console.log(areaCuadrado);
+    
+    const parrafo = document.createElement("p");
+	parrafo.textContent =`El valor del Área de tu cuadrado es de ${areaCuadrado} cm.`;
+    let sectionCuadrado = document.getElementById("sectionCuadrado");
+    sectionCuadrado.appendChild(parrafo);
 };
 
 function calcularPerimetroTriangulo(){
-    console.log("hello world");
+    const TrianguloLadoDerecho = document.getElementById("InputTrianguloLadoDerecho");
+    const TrianguloLadoIzquierdo = document.getElementById("InputTrianguloLadoIzquierdo");
+    const TrianguloBase = document.getElementById("InputTrianguloBase");
+
+    let perimetroTriangulo = parseFloat(TrianguloBase.value) + parseFloat(TrianguloLadoDerecho.value) + parseFloat(TrianguloLadoIzquierdo.value);
+
+    const parrafo = document.createElement("p");
+	parrafo.textContent =`El valor del perímetro de tu triangulo es de: ${perimetroTriangulo} cm.`;
+    let sectionCuadrado = document.getElementById("sectionTriangulo");
+    sectionCuadrado.appendChild(parrafo);
 }
 
 function calcularAreaTriangulo(){
-    console.log("hello world");
+    const trianguloBase = document.getElementById("InputTrianguloBase").value;
+    const trianguloAltura = document.getElementById("InputTrianguloAltura").value;
+
+    let areaTriangulo = (trianguloBase * trianguloAltura)/2;
+    console.log(areaTriangulo);
+
+    const parrafo = document.createElement("p");
+	parrafo.textContent =`El valor del área de tu triangulo es de: ${areaTriangulo} cm.`;
+    let sectionCuadrado = document.getElementById("sectionTriangulo");
+    sectionCuadrado.appendChild(parrafo);
 }
