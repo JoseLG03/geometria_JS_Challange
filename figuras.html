@@ -48,7 +48,7 @@
         Escribe cuánto mide la altura de tu triangulo:
       </label>
       <input id="InputTrianguloAltura" type="number" min="0.1" />
-      
+
       <button type="button" onclick="calcularPerimetroTriangulo()">
         Calcular el perímetro
       </button>
@@ -57,7 +57,22 @@
       </button>
     </form>
   </section>
-
+<section id="sectionCirculo">
+    <h2>Calcula el área y perímetro de un círculo</h2>
+    <form>
+      <label for="inputCirculo">
+        Escribe cuánto mide el radio de tu triangulo:
+      </label>
+      <input id="inputRadioCirculo" type="number" min="0.1"/>
+      
+      <button type="button" onclick="calcularPerimetroCirculo()">
+        Calcular el perímetro
+      </button>
+      <button type="button" onclick="calcularAreaCirculo()">
+        Calcular el área
+      </button>
+    </form>
+  </section>
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -45,3 +45,29 @@ function calcularAreaTriangulo(){
     let sectionCuadrado = document.getElementById("sectionTriangulo");
     sectionCuadrado.appendChild(parrafo);
 }
+
+function calcularPerimetroCirculo(){
+    const radioCirculo = document.getElementById("inputRadioCirculo").value;
+    const pi = Math.PI;
+    
+    let perimetroCirculoPre = pi * radioCirculo * 2;
+    let perimetroCirculo = perimetroCirculoPre.toFixed(2);
+
+    const parrafo = document.createElement("p");
+	parrafo.textContent =`El valor del perímetro de tu triangulo es de: ${perimetroCirculo} cm.`;
+    let sectionCuadrado = document.getElementById("sectionCirculo");
+    sectionCuadrado.appendChild(parrafo);
+}
+
+function calcularAreaCirculo(){
+    const radioCirculo = document.getElementById("inputRadioCirculo").value;
+    const pi = Math.PI;
+    
+    let areaCirculoP = pi * radioCirculo * radioCirculo;
+    let areaCirculo = areaCirculoP.toFixed(2);
+
+    const parrafo = document.createElement("p");
+	parrafo.textContent =`El valor del área de tu Circulo es de: ${areaCirculo} cm.`;
+    let sectionCuadrado = document.getElementById("sectionCirculo");
+    sectionCuadrado.appendChild(parrafo);
+}
