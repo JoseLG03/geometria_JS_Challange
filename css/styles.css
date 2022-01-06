@@ -1,0 +1,34 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: aqua;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    margin-left: 5%;
+}
+
+label{
+    margin-left: 5%;
+}
+
+#labelCuadrado { grid-area: labelCuadrado; }
+#inputCuadrado { grid-area: inputCuadrado; }
+#buttonCuadradoPerimetro { grid-area: buttonCuadradoPerimetro; }
+#buttonCuadradoArea { grid-area: buttonCuadradoArea; }
+
+#sectionCuadrado {
+    display: grid;
+    grid-template-areas:
+    'labelCuadrado labelCuadrado labelCuadrado labelCuadrado labelCuadrado labelCuadrado'
+    'inputCuadrado inputCuadrado inputCuadrado inputCuadrado inputCuadrado inputCuadrado'
+    'buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoArea buttonCuadradoArea buttonCuadradoArea';
+  }

@@ -5,26 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Figuras geométricas | Curso Práctico de JavaScript en Platzi</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen" />
 </head>
 <body>
   <header>
     <h1>
-      Figuras geométricas
+      Calculadora de Figuras Geométricas
     </h1>
     <p>Este es el primer taller del curso práctico de JavaScript</p>
   </header>
 
   <section id="sectionCuadrado">
-    <h2>Calcula el área y perímetro de un cuadrado</h2>
+    <h2 class="h2">Calcula el área y perímetro de un cuadrado</h2>
     <form>
-      <label for="InputCuadrado">
+      <label id="labelCuadrado" for="InputCuadrado">
         Escribe cuánto mide cada lado de tu cuadrado:
       </label>
-      <input id="InputCuadrado" type="number" min="0.1" />
-      <button type="button" onclick="calcularPerimetroCuadrado()">
+      <input  id = "inputCuadrado" type="number" min="0.1" />
+      <button  id = "buttonCuadradoPerimetro" type="button" onclick="calcularPerimetroCuadrado()">
         Calcular el perímetro
       </button>
-      <button type="button" onclick="calcularAreaCuadrado()">
+      <button class = "buttonCuadradoArea" type="button" onclick="calcularAreaCuadrado()">
         Calcular el área
       </button>
     </form>
