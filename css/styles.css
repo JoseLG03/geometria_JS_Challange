@@ -20,18 +20,12 @@ label{
     margin-left: 5%;
 }
 
-#h2Cuadrado { grid-area: h2Cuadrado;}
-#labelCuadrado { grid-area: labelCuadrado;}
-#inputCuadrado { grid-area: inputCuadrado;}
-#buttonCuadradoPerimetro { grid-area: buttonCuadradoPerimetro;}
-#buttonCuadradoArea { grid-area: buttonCuadradoArea;}
-
-#sectionCuadrado {
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    'h2Cuadrado h2Cuadrado h2Cuadrado h2Cuadrado'
-    'labelCuadrado labelCuadrado inputCuadrado inputCuadrado'
-    'buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoArea buttonCuadradoArea';
+#form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
