@@ -17,10 +17,11 @@ p{
 }
 
 label{
-    margin-left: 5%;
+    margin-left: 8%;
+    padding-top: 2%;
 }
 
-#form{
+.form{
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -28,4 +29,29 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .button{
+      margin-right: 2%;
+      margin-left: 17%;
+      margin-top: 2%;
+  }
+
+  #InputTrianguloLadoDerecho{
+    margin-left: 9px;
+    margin-bottom: 9px;
+  }
+
+  #InputTrianguloLadoIzquierdo{
+    margin-bottom: 9px;
+  }
+
+  #InputTrianguloBase{
+    margin-left: 62px;
+    margin-bottom: 9px;
+  }
+
+  #InputTrianguloAltura{
+    margin-left: 54px;
+    margin-bottom: 9px;
   }
