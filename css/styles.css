@@ -20,15 +20,18 @@ label{
     margin-left: 5%;
 }
 
-#labelCuadrado { grid-area: labelCuadrado; }
-#inputCuadrado { grid-area: inputCuadrado; }
-#buttonCuadradoPerimetro { grid-area: buttonCuadradoPerimetro; }
-#buttonCuadradoArea { grid-area: buttonCuadradoArea; }
+#h2Cuadrado { grid-area: h2Cuadrado;}
+#labelCuadrado { grid-area: labelCuadrado;}
+#inputCuadrado { grid-area: inputCuadrado;}
+#buttonCuadradoPerimetro { grid-area: buttonCuadradoPerimetro;}
+#buttonCuadradoArea { grid-area: buttonCuadradoArea;}
 
 #sectionCuadrado {
+    margin: 0px auto;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    'labelCuadrado labelCuadrado labelCuadrado labelCuadrado labelCuadrado labelCuadrado'
-    'inputCuadrado inputCuadrado inputCuadrado inputCuadrado inputCuadrado inputCuadrado'
-    'buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoArea buttonCuadradoArea buttonCuadradoArea';
+    'h2Cuadrado h2Cuadrado h2Cuadrado h2Cuadrado'
+    'labelCuadrado labelCuadrado inputCuadrado inputCuadrado'
+    'buttonCuadradoPerimetro buttonCuadradoPerimetro buttonCuadradoArea buttonCuadradoArea';
   }
