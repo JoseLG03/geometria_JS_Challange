@@ -1,8 +1,6 @@
 header{
     margin: -22px;
     padding: 0px;
-    /*background-image: url("../img/geometry-ge17359cf6_1280.jpg");
-    */
     background: rgb(4,1,47);
     background: linear-gradient(90deg, rgba(4,1,47,1) 0%, rgba(12,22,96,1) 35%, rgba(189,207,210,1) 100%);
     opacity: 0.7;
