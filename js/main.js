@@ -1,7 +1,7 @@
 'use strict';
 
 function calcularPerimetroCuadrado(){
-    const valuePerimetro = document.getElementById("InputCuadrado");
+    const valuePerimetro = document.getElementById("inputCuadrado");
     let perimetroCuadrado = valuePerimetro.value * 4;
 
     const parrafo = document.createElement("p");
@@ -11,7 +11,7 @@ function calcularPerimetroCuadrado(){
 };
 
 function calcularAreaCuadrado(){
-    const valueArea = document.getElementById("InputCuadrado");
+    const valueArea = document.getElementById("inputCuadrado");
     let areaCuadrado = valueArea.value * valueArea.value;
     
     const parrafo = document.createElement("p");
