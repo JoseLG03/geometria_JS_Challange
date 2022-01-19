@@ -5,9 +5,20 @@ function calcularPerimetroCuadrado(){
     let perimetroCuadrado = valuePerimetro.value * 4;
 
     const parrafo = document.createElement("p");
+    parrafo.setAttribute("id", "parrafo");
 	parrafo.textContent =`El valor del Perímetro de tu cuadrado es de ${perimetroCuadrado} cm.`;
-    let sectionCuadrado = document.getElementById("sectionCuadrado");
-    sectionCuadrado.appendChild(parrafo);
+    let sectionCuadrado = document.getElementById("formCuadrado");
+
+    if(document.getElementById("parrafo") === null){
+        console.log("no tiene hijos");
+        sectionCuadrado.appendChild(parrafo);
+    }else{
+        console.log("tiene hijos");
+        console.log(document.getElementById("parrafo"));
+        sectionCuadrado.removeChild(document.getElementById("parrafo"));
+        sectionCuadrado.appendChild(parrafo);
+    }
+
 };
 
 function calcularAreaCuadrado(){
