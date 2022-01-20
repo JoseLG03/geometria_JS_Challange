@@ -11,13 +11,12 @@ function calcularPerimetroCuadrado(){
 
 };
 
-
 function calcularAreaCuadrado(){
 
     const valueArea = document.getElementById("inputCuadrado");
     let areaCuadrado = valueArea.value * valueArea.value;
     let text = " Area de tu Cuadrado";
-    let sectionCuadrado = document.getElementById("sectionCuadrado");
+    let sectionCuadrado = document.getElementById("formCuadrado");
 
     createElemento(areaCuadrado, sectionCuadrado, text);
 };
@@ -28,10 +27,8 @@ function createElemento(value, section, text){
 	parrafo.textContent =`El valor del ${text} es de ${value} cm.`;
 
     if(document.getElementById("parrafo") === null){
-        console.log(section);
         section.appendChild(parrafo);
     }else{
-        console.log(section);
         section.removeChild(document.getElementById("parrafo"));
         section.appendChild(parrafo);
     }
