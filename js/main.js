@@ -8,7 +8,7 @@ function calcularPerimetroCuadrado(){
     let text = " Perimetro de tu Cuadrado";
 
     createElemento(perimetroCuadrado, sectionCuadrado,text);
-    
+
 };
 
 
@@ -28,8 +28,10 @@ function createElemento(value, section, text){
 	parrafo.textContent =`El valor del ${text} es de ${value} cm.`;
 
     if(document.getElementById("parrafo") === null){
+        console.log(section);
         section.appendChild(parrafo);
     }else{
+        console.log(section);
         section.removeChild(document.getElementById("parrafo"));
         section.appendChild(parrafo);
     }
