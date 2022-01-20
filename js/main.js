@@ -1,17 +1,31 @@
 'use strict';
 
 function calcularPerimetroCuadrado(){
+
     const valuePerimetro = document.getElementById("inputCuadrado");
     let perimetroCuadrado = valuePerimetro.value * 4;
     let sectionCuadrado = document.getElementById("formCuadrado");
-    createElemento(perimetroCuadrado, sectionCuadrado);
+    let text = " Perimetro de tu Cuadrado";
 
+    createElemento(perimetroCuadrado, sectionCuadrado,text);
+    
 };
 
-function createElemento(value, section){
+
+function calcularAreaCuadrado(){
+
+    const valueArea = document.getElementById("inputCuadrado");
+    let areaCuadrado = valueArea.value * valueArea.value;
+    let text = " Area de tu Cuadrado";
+    let sectionCuadrado = document.getElementById("sectionCuadrado");
+
+    createElemento(areaCuadrado, sectionCuadrado, text);
+};
+
+function createElemento(value, section, text){
     const parrafo = document.createElement("p");
     parrafo.setAttribute("id", "parrafo");
-	parrafo.textContent =`El valor del Perímetro de tu cuadrado es de ${value} cm.`;
+	parrafo.textContent =`El valor del ${text} es de ${value} cm.`;
 
     if(document.getElementById("parrafo") === null){
         section.appendChild(parrafo);
@@ -20,16 +34,6 @@ function createElemento(value, section){
         section.appendChild(parrafo);
     }
 }
-
-function calcularAreaCuadrado(){
-    const valueArea = document.getElementById("inputCuadrado");
-    let areaCuadrado = valueArea.value * valueArea.value;
-    
-    const parrafo = document.createElement("p");
-	parrafo.textContent =`El valor del Área de tu cuadrado es de ${areaCuadrado} cm.`;
-    let sectionCuadrado = document.getElementById("sectionCuadrado");
-    sectionCuadrado.appendChild(parrafo);
-};
 
 function calcularPerimetroTriangulo(){
     const TrianguloLadoDerecho = document.getElementById("InputTrianguloLadoDerecho");
