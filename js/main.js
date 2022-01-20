@@ -3,23 +3,23 @@
 function calcularPerimetroCuadrado(){
     const valuePerimetro = document.getElementById("inputCuadrado");
     let perimetroCuadrado = valuePerimetro.value * 4;
-
-    const parrafo = document.createElement("p");
-    parrafo.setAttribute("id", "parrafo");
-	parrafo.textContent =`El valor del Perímetro de tu cuadrado es de ${perimetroCuadrado} cm.`;
     let sectionCuadrado = document.getElementById("formCuadrado");
-
-    if(document.getElementById("parrafo") === null){
-        console.log("no tiene hijos");
-        sectionCuadrado.appendChild(parrafo);
-    }else{
-        console.log("tiene hijos");
-        console.log(document.getElementById("parrafo"));
-        sectionCuadrado.removeChild(document.getElementById("parrafo"));
-        sectionCuadrado.appendChild(parrafo);
-    }
+    createElemento(perimetroCuadrado, sectionCuadrado);
 
 };
+
+function createElemento(value, section){
+    const parrafo = document.createElement("p");
+    parrafo.setAttribute("id", "parrafo");
+	parrafo.textContent =`El valor del Perímetro de tu cuadrado es de ${value} cm.`;
+
+    if(document.getElementById("parrafo") === null){
+        section.appendChild(parrafo);
+    }else{
+        section.removeChild(document.getElementById("parrafo"));
+        section.appendChild(parrafo);
+    }
+}
 
 function calcularAreaCuadrado(){
     const valueArea = document.getElementById("inputCuadrado");
