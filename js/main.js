@@ -1,5 +1,14 @@
 'use strict';
 
+let inputCuadrado = document.getElementById("inputCuadrado");
+
+inputCuadrado.addEventListener("keyup", function(event){
+    let btnPerimetroCuadrado = document.getElementById("buttonCuadradoPerimetro");
+    let valueTextField = inputCuadrado.value.trim();
+    habilitarBoton(valueTextField, btnPerimetroCuadrado);
+});
+
+
 function calcularPerimetroCuadrado(){
 
     const valuePerimetro = document.getElementById("inputCuadrado");
@@ -8,7 +17,6 @@ function calcularPerimetroCuadrado(){
     let text = " Perimetro de tu Cuadrado";
 
     createElemento(perimetroCuadrado, sectionCuadrado,text);
-
 };
 
 function calcularAreaCuadrado(){
@@ -81,3 +89,7 @@ function createElemento(value, section, text){
         section.appendChild(parrafo);
     }
 }
+
+function habilitarBoton(valueTextField, btnPerimetroCuadrado){
+    btnPerimetroCuadrado.disabled = (valueTextField == "");
+};
