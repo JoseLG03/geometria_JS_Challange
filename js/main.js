@@ -1,10 +1,22 @@
 'use strict';
 
-let inputCuadrado = document.getElementById("inputCuadrado");
+const inputCuadrado = document.getElementById("inputCuadrado");
+const btnPerimetroCuadrado = document.getElementById("buttonCuadradoPerimetro");
+const btnAreaCuadrado = document.getElementById("buttonCuadradoArea");
+
+const trianguloLadoDerecho = document.getElementById("InputTrianguloLadoDerecho");
+const trianguloLadoIzquierdo = document.getElementById("InputTrianguloLadoIzquierdo");
+const trianguloBase = document.getElementById("InputTrianguloBase");
+const trianguloAltura = document.getElementById("InputTrianguloAltura");
+const btnPerimetroTriangulo = document.getElementById("btnPerimetroTriangulo");
+const btnAreaTriangulo = document.getElementById("buttonCuadradoTriangulo");
+
+
+const sectionCuadrado = document.getElementById("formCuadrado");
+const sectionTriangulo = document.getElementById("formTriangulo");
 
 inputCuadrado.addEventListener("keyup", function(event){
-    let btnPerimetroCuadrado = document.getElementById("buttonCuadradoPerimetro");
-    let btnAreaCuadrado = document.getElementById("buttonCuadradoArea");
+    
     let valueTextField = inputCuadrado.value.trim();
     habilitarBoton(valueTextField, btnPerimetroCuadrado);
     habilitarBoton(valueTextField, btnAreaCuadrado);
@@ -13,9 +25,7 @@ inputCuadrado.addEventListener("keyup", function(event){
 
 function calcularPerimetroCuadrado(){
 
-    const valuePerimetro = document.getElementById("inputCuadrado");
-    let perimetroCuadrado = valuePerimetro.value * 4;
-    let sectionCuadrado = document.getElementById("formCuadrado");
+    let perimetroCuadrado = inputCuadrado.value * 4;
     let text = " Perimetro de tu Cuadrado";
 
     createElemento(perimetroCuadrado, sectionCuadrado,text);
@@ -23,31 +33,23 @@ function calcularPerimetroCuadrado(){
 
 function calcularAreaCuadrado(){
 
-    const valueArea = document.getElementById("inputCuadrado");
-    let areaCuadrado = valueArea.value * valueArea.value;
+    let areaCuadrado = inputCuadrado.value * inputCuadrado.value;
     let text = " Area de tu Cuadrado";
-    let sectionCuadrado = document.getElementById("formCuadrado");
 
     createElemento(areaCuadrado, sectionCuadrado, text);
 };
 
 function calcularPerimetroTriangulo(){
-    const TrianguloLadoDerecho = document.getElementById("InputTrianguloLadoDerecho");
-    const TrianguloLadoIzquierdo = document.getElementById("InputTrianguloLadoIzquierdo");
-    const TrianguloBase = document.getElementById("InputTrianguloBase");
 
-    let perimetroTriangulo = parseFloat(TrianguloBase.value) + parseFloat(TrianguloLadoDerecho.value) + parseFloat(TrianguloLadoIzquierdo.value);
-    let sectionTriangulo = document.getElementById("formTriangulo");
+    let perimetroTriangulo = parseFloat(trianguloBase.value) + parseFloat(trianguloLadoDerecho.value) + parseFloat(TrianguloLadoIzquierdo.value);
     let text = " Perimetro de tu Triangulo";
 
     createElemento(perimetroTriangulo, sectionTriangulo, text);
 }
 
 function calcularAreaTriangulo(){
-    const trianguloBase = document.getElementById("InputTrianguloBase").value;
-    const trianguloAltura = document.getElementById("InputTrianguloAltura").value;
-
-    let areaTriangulo = (trianguloBase * trianguloAltura)/2;
+ 
+    let areaTriangulo = (trianguloBase.value * trianguloAltura.value)/2;
     let sectionTriangulo = document.getElementById("formTriangulo");
     let text = " Area de tu Triangulo";
 
