@@ -4,8 +4,10 @@ let inputCuadrado = document.getElementById("inputCuadrado");
 
 inputCuadrado.addEventListener("keyup", function(event){
     let btnPerimetroCuadrado = document.getElementById("buttonCuadradoPerimetro");
+    let btnAreaCuadrado = document.getElementById("buttonCuadradoArea");
     let valueTextField = inputCuadrado.value.trim();
     habilitarBoton(valueTextField, btnPerimetroCuadrado);
+    habilitarBoton(valueTextField, btnAreaCuadrado);
 });
 
 
@@ -90,6 +92,6 @@ function createElemento(value, section, text){
     }
 }
 
-function habilitarBoton(valueTextField, btnPerimetroCuadrado){
-    btnPerimetroCuadrado.disabled = (valueTextField == "");
+function habilitarBoton(valueTextField, btn){
+    btn.disabled = (valueTextField == "");
 };
