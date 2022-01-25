@@ -22,6 +22,11 @@ inputCuadrado.addEventListener("keyup", function(event){
     habilitarBoton(valueTextField, btnAreaCuadrado);
 });
 
+trianguloBase.addEventListener("keyup", function(event){
+    
+    let valueTextField = trianguloBase.value.trim();
+    habilitarBoton2(valueTextField, btnPerimetroTriangulo);
+});
 
 function calcularPerimetroCuadrado(){
 
@@ -96,4 +101,10 @@ function createElemento(value, section, text){
 
 function habilitarBoton(valueTextField, btn){
     btn.disabled = (valueTextField == "");
+};
+
+function habilitarBoton2(valueTextField, btn){
+    //btn.disabled = (valueTextField == "");
+    console.log(valueTextField,btn, "true");
+    return true;
 };
