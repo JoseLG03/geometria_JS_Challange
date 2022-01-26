@@ -15,17 +15,25 @@ const btnAreaTriangulo = document.getElementById("buttonCuadradoTriangulo");
 const sectionCuadrado = document.getElementById("formCuadrado");
 const sectionTriangulo = document.getElementById("formTriangulo");
 
-inputCuadrado.addEventListener("keyup", function(event){
-    
+inputCuadrado.addEventListener("input", function(event){
     let valueTextField = inputCuadrado.value.trim();
-    habilitarBoton(valueTextField, btnPerimetroCuadrado);
-    habilitarBoton(valueTextField, btnAreaCuadrado);
+    if (valueTextField === "") {
+        btnPerimetroCuadrado.disabled = true;
+        btnAreaCuadrado.disabled = true; 
+      } else {
+        btnPerimetroCuadrado.disabled = false;
+        btnAreaCuadrado.disabled = false;
+      }
 });
 
-trianguloBase.addEventListener("keyup", function(event){
-    
-    let valueTextField = trianguloBase.value.trim();
-    habilitarBoton2(valueTextField, btnPerimetroTriangulo);
+trianguloBase.addEventListener("input", function(event){
+    if (trianguloBase.validity.valueMissing) {
+        console.log("true");
+        trianguloBase.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
+      } else {
+        let valueTextField = trianguloBase.value.trim();
+        habilitarBoton(valueTextField, btnAreaTriangulo);  
+      }
 });
 
 function calcularPerimetroCuadrado(){
@@ -98,13 +106,3 @@ function createElemento(value, section, text){
         section.appendChild(parrafo);
     }
 }
-
-function habilitarBoton(valueTextField, btn){
-    btn.disabled = (valueTextField == "");
-};
-
-function habilitarBoton2(valueTextField, btn){
-    //btn.disabled = (valueTextField == "");
-    console.log(valueTextField,btn, "true");
-    return true;
-};
