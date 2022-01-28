@@ -9,7 +9,7 @@ const trianguloLadoIzquierdo = document.getElementById("InputTrianguloLadoIzquie
 const trianguloBase = document.getElementById("InputTrianguloBase");
 const trianguloAltura = document.getElementById("InputTrianguloAltura");
 const btnPerimetroTriangulo = document.getElementById("btnPerimetroTriangulo");
-const btnAreaTriangulo = document.getElementById("buttonCuadradoTriangulo");
+const btnAreaTriangulo = document.getElementById("btnAreaTriangulo");
 
 
 const sectionCuadrado = document.getElementById("formCuadrado");
@@ -17,23 +17,31 @@ const sectionTriangulo = document.getElementById("formTriangulo");
 
 inputCuadrado.addEventListener("input", function(event){
     let valueTextField = inputCuadrado.value.trim();
-    if (valueTextField === "") {
-        btnPerimetroCuadrado.disabled = true;
-        btnAreaCuadrado.disabled = true; 
-      } else {
-        btnPerimetroCuadrado.disabled = false;
-        btnAreaCuadrado.disabled = false;
-      }
+    stateHandle(valueTextField,btnPerimetroCuadrado,btnAreaCuadrado);
 });
 
-trianguloBase.addEventListener("input", function(event){
-    if (trianguloBase.validity.valueMissing) {
-        console.log("true");
-        trianguloBase.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
+function stateHandle(valueTextField,btnPerimetro, btnArea){
+    if (valueTextField === "") {
+        btnPerimetro.disabled = true;
+        btnArea.disabled = true; 
       } else {
-        let valueTextField = trianguloBase.value.trim();
-        habilitarBoton(valueTextField, btnAreaTriangulo);  
+        btnPerimetro.disabled = false;
+        btnArea.disabled = false;
       }
+}
+function stateHandleTriangulo(valueTextFieldBase,valueTextFieldAltura){
+    if (valueTextFieldBase === "" && valueTextFieldAltura === "") {
+        btnAreaTriangulo.disabled = true; 
+      } else {
+        btnAreaTriangulo.disabled = false;
+      }
+}
+
+trianguloBase.addEventListener("input", function(event){
+    let valueTextFieldBase = trianguloBase.value.trim();
+    let valueTextFieldAltura = trianguloAltura.value.trim();
+    console.log(valueTextFieldBase);
+    stateHandleTriangulo(valueTextFieldBase, valueTextFieldAltura);
 });
 
 function calcularPerimetroCuadrado(){
