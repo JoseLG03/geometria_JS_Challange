@@ -3,6 +3,7 @@
 const inputCuadrado = document.getElementById("inputCuadrado");
 const btnPerimetroCuadrado = document.getElementById("buttonCuadradoPerimetro");
 const btnAreaCuadrado = document.getElementById("buttonCuadradoArea");
+const sectionCuadrado = document.getElementById("formCuadrado");
 
 const trianguloLadoDerecho = document.getElementById("InputTrianguloLadoDerecho");
 const trianguloLadoIzquierdo = document.getElementById("InputTrianguloLadoIzquierdo");
@@ -10,14 +11,20 @@ const trianguloBase = document.getElementById("InputTrianguloBase");
 const trianguloAltura = document.getElementById("InputTrianguloAltura");
 const btnPerimetroTriangulo = document.getElementById("btnPerimetroTriangulo");
 const btnAreaTriangulo = document.getElementById("btnAreaTriangulo");
-
-
-const sectionCuadrado = document.getElementById("formCuadrado");
 const sectionTriangulo = document.getElementById("formTriangulo");
+
+const inputCirculo = document.getElementById("inputRadioCirculo");
+const btnAreaCirculo = document.getElementById("btnAreaCirculo");
+const btnPerimetroCirculo = document.getElementById("btnPerimetroCirculo");
 
 inputCuadrado.addEventListener("input", function(event){
     let valueTextField = inputCuadrado.value.trim();
     stateHandle(valueTextField,btnPerimetroCuadrado,btnAreaCuadrado);
+});
+
+inputCirculo.addEventListener("input", function(event){
+    let valueTextField = inputCirculo.value.trim();
+    stateHandle(valueTextField,btnPerimetroCirculo,btnAreaCirculo);
 });
 
 trianguloBase.addEventListener("input", stateHandleAreaTriangulo);
