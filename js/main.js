@@ -20,6 +20,12 @@ inputCuadrado.addEventListener("input", function(event){
     stateHandle(valueTextField,btnPerimetroCuadrado,btnAreaCuadrado);
 });
 
+trianguloBase.addEventListener("input", stateHandleAreaTriangulo);
+trianguloAltura.addEventListener("input", stateHandleAreaTriangulo);
+trianguloBase.addEventListener("input", stateHandlePerimetroTriangulo);
+trianguloLadoDerecho.addEventListener("input", stateHandlePerimetroTriangulo);
+trianguloLadoIzquierdo.addEventListener("input", stateHandlePerimetroTriangulo);
+
 function stateHandle(valueTextField,btnPerimetro, btnArea){
     if (valueTextField === "") {
         btnPerimetro.disabled = true;
@@ -29,20 +35,44 @@ function stateHandle(valueTextField,btnPerimetro, btnArea){
         btnArea.disabled = false;
       }
 }
-function stateHandleTriangulo(valueTextFieldBase,valueTextFieldAltura){
-    if (valueTextFieldBase === "" && valueTextFieldAltura === "") {
-        btnAreaTriangulo.disabled = true; 
-      } else {
+
+function stateHandleAreaTriangulo(){
+    let value = 0;
+
+    if(trianguloBase.value.trim() === ""){
+        value++;
+    }
+    if(trianguloAltura.value.trim() === ""){
+        value++;
+    }
+
+    if(value >0){
+        btnAreaTriangulo.disabled = true;
+    }else{
         btnAreaTriangulo.disabled = false;
-      }
+    }
 }
 
-trianguloBase.addEventListener("input", function(event){
-    let valueTextFieldBase = trianguloBase.value.trim();
-    let valueTextFieldAltura = trianguloAltura.value.trim();
-    console.log(valueTextFieldBase);
-    stateHandleTriangulo(valueTextFieldBase, valueTextFieldAltura);
-});
+function stateHandlePerimetroTriangulo(){
+    
+    let value = 0;
+
+    if(trianguloBase.value.trim() === ""){
+        value++;
+    }
+    if(trianguloLadoDerecho.value.trim() === ""){
+        value++;
+    }
+    if(trianguloLadoIzquierdo.value.trim() === ""){
+        value++;
+    }
+
+    if(value >0){
+        btnPerimetroTriangulo.disabled = true;
+    }else{
+        btnPerimetroTriangulo.disabled = false;
+    }
+}
 
 function calcularPerimetroCuadrado(){
 
@@ -62,7 +92,7 @@ function calcularAreaCuadrado(){
 
 function calcularPerimetroTriangulo(){
 
-    let perimetroTriangulo = parseFloat(trianguloBase.value) + parseFloat(trianguloLadoDerecho.value) + parseFloat(TrianguloLadoIzquierdo.value);
+    let perimetroTriangulo = parseFloat(trianguloBase.value) + parseFloat(trianguloLadoDerecho.value) + parseFloat(trianguloLadoIzquierdo.value);
     let text = " Perimetro de tu Triangulo";
 
     createElemento(perimetroTriangulo, sectionTriangulo, text);
